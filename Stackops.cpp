@@ -22,18 +22,18 @@ class Stack{
                 return;
             }
             arr[++top]=x;
-            cout<<"Pushed"<<x;
+            cout<<"\nPushed"<<x;
         }
         void pop(){
             if(isEmpty()){
-                cout<<"Stack Underflow";
+                cout<<"\nStack Underflow";
                 return;
             }
-            cout<<"Poppped"<<arr[top--]<<endl;
+            cout<<"\nPoppped"<<arr[top--]<<endl;
         }
         int peek(){
             if(isEmpty()){
-                cout<<"Stcak is Empty ";
+                cout<<"\nStcak is Empty ";
             }
             return arr[top];
         }
@@ -48,5 +48,5 @@ int main(){
     s.pop();
     s.pop();
     cout<<"Element at top\n"<<s.peek();
-    return ;
+    return 1;
 }
