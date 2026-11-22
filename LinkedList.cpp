@@ -11,7 +11,7 @@ Node* head=NULL;
 void Linkedlist(int x){
     Node* newNode = new Node();
     newNode->data=x;
-    newNode->next=head;
+    newNode->next=NULL;
     head=newNode;
 }
 void Insert_last(int x){
@@ -26,6 +26,26 @@ void Insert_last(int x){
         temp=temp->next;
     }
     temp->next=newNode;
+}
+void Insert_Position(int x,int pos){
+    Node* newNode = new Node();
+    newNode->data=x;
+    if(pos==1){
+        newNode->next=head;
+        head=newNode;
+    }
+    Node* temp=head;
+    for(int i=0;i<pos-1 && temp!=NULL;i++){
+        temp=temp->next;
+    }
+    if (temp == NULL) {
+        cout << "Position " << pos << " out of range!\n";
+        delete newNode;                  
+        return;
+    }
+    newNode->next=temp->next;
+    temp->next=newNode;
+
 }
 void PrintList() {
     Node* temp = head;
