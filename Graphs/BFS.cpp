@@ -12,6 +12,7 @@ void Bfs(int start,const vector<vector<int>>&adj){
     while(!q.empty()){
         int u=q.front();
         q.pop();
+        cout<<u<<" ";
         for(int v:adj[u]){
             while(!Visited[v]){
                 Visited[v]=true;
