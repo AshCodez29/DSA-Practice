@@ -10,7 +10,10 @@ struct Node {
 void Insert(Node* &head,int pow,int coeff){
     if(coeff==0) return ;
     Node* newNode=new Node{pow,coeff,nullptr};
-    if(head==nullptr) head=newNode;
+    if(head==nullptr) {
+        head=newNode ;
+        return;
+    }
     Node* temp=head;
     while(temp->next!=nullptr){
         temp=temp->next;
